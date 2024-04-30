@@ -1,4 +1,17 @@
+import Landing from "./pages/Landing";
+import styled from "styled-components";
+
+const Button = styled.button`
+  background: red;
+  color: white;
+  font-size: 2rem;
+`;
 const App = () => {
-  return <h2>mixmaster starter</h2>;
+  return (
+    <div>
+      <Button>Click Me</Button>
+      <Landing />
+    </div>
+  );
 };
 export default App;

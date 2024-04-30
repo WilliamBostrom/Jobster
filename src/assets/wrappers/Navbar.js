@@ -1,50 +1,84 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Wrapper = styled.nav`
-  background: var(--white);
-  .nav-center {
-    width: var(--view-width);
-    max-width: var(--max-width);
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    padding: 1.5rem 2rem;
-  }
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.1);
   .logo {
-    font-size: clamp(1.5rem, 3vw, 3rem);
-    color: var(--primary-500);
-    font-weight: 700;
-    letter-spacing: 2px;
-  }
-  .nav-links {
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-top: 1rem;
+    align-items: center;
+    width: 100px;
   }
-  .nav-link {
-    color: var(--grey-900);
-    padding: 0.5rem 0.5rem 0.5rem 0;
-    transition: var(--transition);
-    letter-spacing: 2px;
+  .nav-center {
+    display: flex;
+    width: 90vw;
+    align-items: center;
+    justify-content: space-between;
   }
-  .nav-link:hover {
+  .toggle-btn {
+    background: transparent;
+    border-color: transparent;
+    font-size: 1.75rem;
     color: var(--primary-500);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
   }
-  .active {
-    color: var(--primary-500);
+  background: var(--white);
+  .btn-container {
+    position: relative;
   }
-  @media (min-width: 768px) {
-    .nav-center {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .nav-links {
-      flex-direction: row;
-      margin-top: 0;
-    }
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 0.5rem;
+    position: relative;
+    box-shadow: var(--shadow-2);
   }
-`;
 
-export default Wrapper;
+  .dropdown {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    background: var(--primary-100);
+    box-shadow: var(--shadow-2);
+    padding: 0.5rem;
+    text-align: center;
+    visibility: hidden;
+    border-radius: var(--borderRadius);
+  }
+  .show-dropdown {
+    visibility: visible;
+  }
+  .dropdown-btn {
+    background: transparent;
+    border-color: transparent;
+    color: var(--primary-500);
+    letter-spacing: var(--letterSpacing);
+    text-transform: capitalize;
+    cursor: pointer;
+  }
+  .logo-text {
+    display: none;
+    margin: 0;
+  }
+  @media (min-width: 992px) {
+    position: sticky;
+    top: 0;
+
+    .nav-center {
+      width: 90%;
+    }
+    .logo {
+      display: none;
+    }
+    .logo-text {
+      display: block;
+    }
+  }
+`
+export default Wrapper
