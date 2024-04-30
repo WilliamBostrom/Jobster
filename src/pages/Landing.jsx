@@ -1,8 +1,12 @@
+import { Link } from "react-router-dom";
+import Wrapper from "../assets/wrappers/LandingPage";
+import { Logo } from "../components/index";
+
 function Landing() {
   return (
-    <main>
+    <Wrapper>
       <nav>
-        <img src="/images/logo.svg" alt="logo" className="logo" />
+        <Logo />
       </nav>
       <div className="container page">
         <div className="info">
@@ -14,11 +18,13 @@ function Landing() {
             dolore voluptas harum ipsum at labore libero magnam placeat dolorum
             necessitatibus?
           </p>
-          <button className="btn btn-hero">Login/Register</button>
+          <Link to="/register" className="btn btn-hero">
+            Login/Register
+          </Link>
         </div>
         <img src="/images/main.svg" alt="logo" className="job people" />
       </div>
-    </main>
+    </Wrapper>
   );
 }
 
